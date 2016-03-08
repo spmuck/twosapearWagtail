@@ -40,5 +40,3 @@ def top_menu_children(context, parent):
 def has_menu_children(page):
     return page.get_children().live().in_menu().exists()
 
-@register.assignment_tag(takes_context=True)
-def latest_5_pages(context)
