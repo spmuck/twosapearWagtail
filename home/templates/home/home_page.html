@@ -1,8 +1,19 @@
 {% extends "home/base.html" %}
 
+{% load wagtailcore_tags wagtailimages_tags %}
+
 {% load wagtailcore_tags %}
 {% block body_class %}template-homepage{% endblock %}
 
 {% block content %}
     {{ page.body|richtext }}
+    {% for post in posts %}
+        <div class="row">
+            <div class="col-xs-2">{% image post.main_image width-200 %}</div>
+            <div class="container col-xs-8 col-xs-offset-2">
+                <h1><div class="row">{{ post.title }}</div></h1>
+                <div class="row">{{ post.intro }}</div>
+            </div>
+        </div>
+    {% endfor %}
 {% endblock %}

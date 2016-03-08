@@ -1,1 +1,16 @@
 body{background-color: blue}
+
+.main_image
+{
+    float: left;
+}
+
+.post_intro
+{
+    float: left;
+}
+
+.post_preview
+{
+    display: inline-block;
+}
