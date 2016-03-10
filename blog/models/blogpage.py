@@ -2,7 +2,7 @@ from django.db import models
 
 from wagtail.wagtailcore.models import Page, Orderable
 from wagtail.wagtailcore.fields import RichTextField, StreamField
-from wagtail.wagtailadmin.edit_handlers import (FieldPanel, InlinePanel)
+from wagtail.wagtailadmin.edit_handlers import (FieldPanel, InlinePanel, StreamFieldPanel)
 from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 from wagtail.wagtailsearch import index
 
@@ -11,6 +11,7 @@ from modelcluster.tags import ClusterTaggableManager
 from taggit.models import TaggedItemBase
 
 from blog.carousel import CarouselItem
+from blog.blogstreamblock import BlogStreamBlock
 
 class BlogPageTag(TaggedItemBase):
     content_object = ParentalKey('blog.BlogPage', related_name='tagged_items')
@@ -29,7 +30,7 @@ class BlogPage(Page):
     tags = ClusterTaggableManager(through=BlogPageTag, blank=True)
     date = models.DateField("Post date")
     intro = models.CharField(max_length=250)
-    body = RichTextField(blank=True)
+    body = StreamField(BlogStreamBlock())
     feed_image = models.ForeignKey(
         'wagtailimages.Image',
         null=True,
@@ -47,7 +48,7 @@ class BlogPage(Page):
         FieldPanel('date'),
         ImageChooserPanel('main_image'),
         FieldPanel('intro'),
-        FieldPanel('body'),
+        StreamFieldPanel('body'),
         InlinePanel('carousel_items', label="Carousel items"),
     ]
     

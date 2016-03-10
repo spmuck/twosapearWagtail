@@ -16,5 +16,9 @@
 
     <div class="intro">{{ page.intro }}</div>
 
-    {{ page.body|richtext }}
+    {% if page.body %}
+        <div class="body-content">
+            {% include "blog/streamfield.html" with content=page.body %}
+        </div>
+    {% endif %}
 {% endblock %}

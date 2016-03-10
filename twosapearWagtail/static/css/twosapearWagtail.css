@@ -15,9 +15,3 @@ body{background-color: blue}
     display: inline-block;
 }
 
-.home-post-row
-{
-    border-bottom: 50px dotted black;
-    border-style: dotted;
-    border-color: black;
-}

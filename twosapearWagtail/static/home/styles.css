@@ -15,9 +15,33 @@
 
 .navbar{
   text-align: center;
+  background-color:rgba(255, 255, 255, 0.75);
 }
 
-.input-group input
-[
-    width: 40ps
-]
+.menu-item>a
+{
+    color: back;
+}
+
+.home-post-row
+{
+    padding: 5px;
+    border-bottom: 2px dotted black;
+}
+
+.stream-image
+{
+   width: 100%;
+   padding: 0px; 
+}
+
+.caption
+{
+    background-color: #000;
+    bottom: 0;
+    color: #fff;
+    left: 0;
+    opacity: 0.5;
+    position: absolute;
+    width: 100%;
+}
