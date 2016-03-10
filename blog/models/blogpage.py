@@ -1,24 +1,16 @@
 from django.db import models
 
-from modelcluster.fields import ParentalKey
-
 from wagtail.wagtailcore.models import Page, Orderable
 from wagtail.wagtailcore.fields import RichTextField, StreamField
-from wagtail.wagtailadmin.edit_handlers import (FieldPanel,
-                                                InlinePanel,
-                                                MultiFieldPanel,
-                                                PageChooserPanel)
+from wagtail.wagtailadmin.edit_handlers import (FieldPanel, InlinePanel)
 from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
-from wagtail.wagtaildocs.edit_handlers import DocumentChooserPanel
 from wagtail.wagtailsearch import index
-from wagtail.wagtailimages.blocks import ImageChooserBlock
-from wagtail.wagtaildocs.blocks import DocumentChooserBlock
 
+from modelcluster.fields import ParentalKey
 from modelcluster.tags import ClusterTaggableManager
 from taggit.models import TaggedItemBase
 
 from blog.carousel import CarouselItem
-from blog.links import RelatedLink
 
 class BlogPageTag(TaggedItemBase):
     content_object = ParentalKey('blog.BlogPage', related_name='tagged_items')
@@ -63,15 +55,3 @@ class BlogPage(Page):
         ImageChooserPanel('feed_image'),
         FieldPanel('tags'),
     ]
-
-class BlogIndexPage(Page):
-    intro = RichTextField(blank=True)
-
-    content_panels = Page.content_panels + [
-        FieldPanel('intro', classname="full"),
-        InlinePanel('related_links', label="Related links"),
-    ]
-
-
-class BlogIndexRelatedLink(Orderable, RelatedLink):
-    page = ParentalKey('BlogIndexPage', related_name='related_links')
