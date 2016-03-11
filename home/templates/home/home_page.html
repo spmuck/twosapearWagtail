@@ -7,10 +7,11 @@
 
 {% block content %}
     {% for post in posts %}
+        <hr />
         <div class="row home-post-row">
-            <div class="col-xs-8 thumbnail">{% image post.main_image original class="img-rounded" %}</div>
-            <div class="container col-xs-4">
-                <h1><a href="{% pageurl post %}"><div class="row bg-primary">{{ post.title }}</div></a></h1>
+            <div class="col-md-5 col-xs-12"><a href="{% pageurl post %}" class="thumbnail">{% image post.main_image original class="img-rounded" %}</a></div>
+            <div class="container col-md-7 col-xs-12">
+                <h1><a href="{% pageurl post %}"><div class="row ">{{ post.title }}</div></a></h1>
                 <div class="row">{{ post.intro }}</div>
             </div>
         </div>
