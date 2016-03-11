@@ -6,11 +6,10 @@
 {% block body_class %}template-homepage{% endblock %}
 
 {% block content %}
-    {{ page.body|richtext }}
     {% for post in posts %}
         <div class="row home-post-row">
-            <div class="col-xs-2">{% image post.main_image fill-300x200-c100 class="img-rounded" %}</div>
-            <div class="container col-xs-8 col-xs-offset-2">
+            <div class="col-xs-4 thumbnail">{% image post.main_image fill-300x200-c100 class="img-rounded" %}</div>
+            <div class="container col-xs-6 col-xs-offset-2">
                 <h1><div class="row bg-primary">{{ post.title }}</div></h1>
                 <div class="row">{{ post.intro }}</div>
                 <div class="row">
