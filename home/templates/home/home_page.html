@@ -16,4 +16,9 @@
             </div>
         </div>
     {% endfor %}
+    {% for tag in tags %}
+        <a href="" class="btn btn-primary btn-xs">
+            <i class="glyphicon glyphicon-tag"></i> {{ tag }}                  
+        </a>
+    {% endfor%}
 {% endblock %}

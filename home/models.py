@@ -6,6 +6,7 @@ from wagtail.wagtailcore.models import Page
 from wagtail.wagtailcore.fields import RichTextField
 from wagtail.wagtailadmin.edit_handlers import FieldPanel
 from blog.models import BlogPage
+from taggit.models import Tag
 
 
 class HomePage(Page):
@@ -17,6 +18,6 @@ class HomePage(Page):
     
     def get_context(self, request):
         context = super(HomePage, self).get_context(request)
-        context['chillyDilly'] = 'yoyoma!'
         context['posts'] = BlogPage.objects.order_by('date')[:5]
+        context['tags'] = Tag.objects.all();
         return context
