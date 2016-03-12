@@ -10,10 +10,6 @@
     
     {% include "blog/carousel.html" with carousel_items=page.carousel_items.all only %}
 
-    {% if page.main_image %}
-      {% image page.main_image width-400 %}
-    {% endif %}
-
     <div class="intro">{{ page.intro }}</div>
 
     {% if page.body %}

@@ -31,7 +31,7 @@
                     {% image child.value.image width-1280 as theimage %}
                 {% endif %}
                 <div class="stream-image">
-                    <img src="{{ theimage.url }}" width="{{ theimage.width }}" height="{{ theimage.height }}" alt="{{ theimage.alt }}" />
+                    <img src="{{ theimage.url }}" width="{{ theimage.width }}" height="{{ theimage.height }}" alt="{{ theimage.alt }}" class="img-responsive img-rounded" />
 
                     {% if child.value.caption %}
                         <div class="caption">
