@@ -7,7 +7,7 @@
 
 {% block content %}
     {% for post in posts %}
-        <hr />
+        {% if forloop.first %}<hr />{% endif %}
         <div class="row home-post-row">
             <div class="col-md-5 col-xs-12"><a href="{% pageurl post %}" class="thumbnail">{% image post.main_image original class="img-rounded" %}</a></div>
             <div class="container col-md-7 col-xs-12">
