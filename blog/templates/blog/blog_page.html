@@ -6,8 +6,8 @@
 
 {% block content %}
     <h1>{{ page.title }}</h1>
-    <p class="meta">{{ page.date }}</p>
-    
+    <p class="meta blog_date">{{ page.date }}</p>
+    <hr>
     {% include "blog/carousel.html" with carousel_items=page.carousel_items.all only %}
 
     <div class="intro">{{ page.intro }}</div>

@@ -12,7 +12,7 @@
             <div class="col-md-5 col-xs-12"><a href="{% pageurl post %}" class="thumbnail">{% image post.main_image original class="img-rounded" %}</a></div>
             <div class="container col-md-7 col-xs-12">
                 <h1><a href="{% pageurl post %}"><div class="row ">{{ post.title }}</div></a></h1>
-                <div class="row">{{ post.intro }}</div>
+                <div class="row"><p>{{ post.intro }}</p></div>
             </div>
         </div>
     {% endfor %}
