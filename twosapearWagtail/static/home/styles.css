@@ -108,9 +108,27 @@ p.blog_date
 {
     font-weight: 100;
     font-size: 1em;
+    float: left;
 }
 
 .intro
 {
     margin-top: 1em;
+}
+
+.date_line
+{
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.date_line:after {
+  content:"";
+  display:block;
+  clear:both;
+}
+
+.blog_tags
+{
+    float: right;
 }
