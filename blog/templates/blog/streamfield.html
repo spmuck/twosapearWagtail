@@ -22,7 +22,7 @@
                 {% if child.value.attribution %}<span>- {{ child.value.attribution }}</span>{% endif %}
             </blockquote>
         {% elif child.block_type == 'paragraph' %}
-            {{ child.value|richtext }}
+            <div class="paragraph">{{ child.value|richtext }}</div>
         {% elif child.block_type == 'aligned_image' %}
             <div class="img-wrapper {{ child.value.alignment }} wrapper">
                 {% if child.value.alignment == "left" or child.value.alignment == "right" %}
