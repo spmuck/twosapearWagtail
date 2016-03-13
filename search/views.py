@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
-from wagtail.wagtailcore.models import Page
+from blog.models import BlogPage as Page
 from wagtail.wagtailsearch.models import Query
 
 
