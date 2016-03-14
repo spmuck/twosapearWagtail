@@ -6,13 +6,18 @@
 
 {% block content %}
     <h1>{{ page.title }}</h1>
-    <p class="meta">{{ page.date }}</p>
-    
+        <div class="date_line">
+            <p class="meta blog_date">{{ page.date }}</p>
+            <div class="blog_tags">
+                {% for tag in page.tags.all %}
+                <a href="" class="btn btn-primary btn-xs">
+                    <i class="glyphicon glyphicon-tag"></i> {{ tag }}                  
+                </a>
+                {% endfor%}
+            </div>
+        </div>   
+    <hr>
     {% include "blog/carousel.html" with carousel_items=page.carousel_items.all only %}
-
-    {% if page.main_image %}
-      {% image page.main_image width-400 %}
-    {% endif %}
 
     <div class="intro">{{ page.intro }}</div>
 

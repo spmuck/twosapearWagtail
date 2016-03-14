@@ -19,5 +19,4 @@ class HomePage(Page):
     def get_context(self, request):
         context = super(HomePage, self).get_context(request)
         context['posts'] = BlogPage.objects.order_by('date')[:5]
-        context['tags'] = Tag.objects.all();
         return context
