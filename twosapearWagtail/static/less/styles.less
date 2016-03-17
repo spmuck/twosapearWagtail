@@ -5,7 +5,7 @@
 @navbar-default-bg: rgba(255, 255, 255, 0.75);
 @font-size-base: 16px;
 @font-family-sans-serif:  "Source Sans Pro", Helvetica, Arial, sans-serif;
-
+@seafoam-green: #AAB593;
 .main
 {
     margin-top: 20px;
@@ -103,12 +103,13 @@ p.blog_date
 {
     max-width: 720px;
     margin: 0 auto;
-}
-
-.date_line:after {
-  content:"";
-  display:block;
-  clear:both;
+    
+    &:after
+    {
+        content:"";
+        display:block;
+        clear:both;
+    }
 }
 
 .blog_tags
