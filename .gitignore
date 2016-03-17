@@ -56,4 +56,6 @@ docs/_build/
 #password and config info
 secrets.py
 
+
 **/media/
+**/bower_components

@@ -1,0 +1,29 @@
+{
+  "name": "Two's a Pear",
+  "homepage": "https://github.com/spmuck/twosapearWagtail",
+  "authors": [
+    "Sean Muck spmuck@gmail.com"
+  ],
+  "description": "food blog",
+  "main": "manage.py",
+  "moduleType": [],
+  "keywords": [
+    "django",
+    "wagtail",
+    "cms",
+    "food",
+    "blog"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6"
+  }
+}
