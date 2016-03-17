@@ -40,6 +40,8 @@
                     {% endif %}
                 </div>
             </div>
+        {% elif child.block_type == 'timed_image_series' %}
+            {{ child }}
         {% else %}
             {{ child }}
         {% endif %}

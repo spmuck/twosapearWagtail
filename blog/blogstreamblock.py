@@ -2,7 +2,7 @@ from django import forms
 
 from wagtail.wagtailcore.blocks import (TextBlock, StructBlock, StreamBlock,
                                         FieldBlock, CharBlock, RichTextBlock, 
-                                        RawHTMLBlock)
+                                        RawHTMLBlock, ListBlock)
 from wagtail.wagtailimages.blocks import ImageChooserBlock
 from wagtail.wagtaildocs.blocks import DocumentChooserBlock
 
@@ -11,13 +11,17 @@ class ImageFormatChoiceBlock(FieldBlock):
     field = forms.ChoiceField(choices=(
         ('left', 'Wrap left'), ('right', 'Wrap right'), ('mid', 'Mid width'), ('full', 'Full width'),
     ))                                       
-                                        
-                                        
+                                                                               
 class ImageBlock(StructBlock):
     image = ImageChooserBlock()
     caption = RichTextBlock()
     alignment = ImageFormatChoiceBlock()
-
+    
+class TimedImageSeriesBlock(StructBlock):
+    images = ListBlock(ImageChooserBlock(label="Image", icon="image"))
+    width = CharBlock(label = "Image Width")
+    height = CharBlock(label = "Image Height")
+    interval = CharBlock(label = "Interval in seconds")
 
 class PullQuoteBlock(StructBlock):
     quote = TextBlock("quote title")
@@ -51,4 +55,5 @@ class BlogStreamBlock(StreamBlock):
     pullquote = PullQuoteBlock()
     aligned_html = AlignedHTMLBlock(icon="code", label='Raw HTML')
     document = DocumentChooserBlock(icon="doc-full-inverse")
+    timed_image_series = TimedImageSeriesBlock(label="Timed images for my babyo :)", icon="image", template="blog/timedimageseries.html")
     

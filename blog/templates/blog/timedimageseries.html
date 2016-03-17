@@ -1,0 +1,20 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+<div class="timed-image-series">
+    <script type = "text/javascript">
+        function displayNextImage() {
+              x = (x === images.length - 1) ? 0 : x + 1;
+              document.getElementById("timed-img").src = images[x];
+        }
+        function startTimer() {
+            setInterval(displayNextImage, {{self.interval}});
+        }
+        var images = [], x = -1;
+        {% for image in self.images %}
+            {% image image width-720 as theimage %}
+            images[{{ forloop.counter0 }}] = "{{ theimage.url }}";
+        {% endfor %}
+        startTimer();
+    </script>
+    <img style="margin: 0 auto;" id="timed-img" width="{{ self.width }}" height="{{ self.height }}" class="img-responsive img-rounded"/>
+</div>
