@@ -14,14 +14,12 @@
         <meta name="description" content="{% if self.search_description %}{{ self.search_description }}{% endif %}">
 
         {# External stylesheets #}
-        <link rel="stylesheet" href="{% static "bower_components/bootstrap/dist/css/bootstrap.min.css" %}" />
-        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300' rel='stylesheet' type='text/css'>
 
         {# Local static assets such as css, images and javascrpt should be stored at [yourapp]/static/[yourapp]/... #}
         {% compress css %}
             {# Custom stylesheets #}
             {# SCSS compilation relies on django compressor #}
-            <link rel="stylesheet" type="text/css" href="{% static "home/styles.css" %}" />
+            <link rel="stylesheet" href="{% static "css/styles.css" %}" />
         {% endcompress %}
 
         {% block extra_css %}{% endblock %} {# Override this block in individual templates in order to add stylesheets on a template by template basis #}

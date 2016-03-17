@@ -59,3 +59,4 @@ secrets.py
 
 **/media/
 **/bower_components
+**/node_modules
