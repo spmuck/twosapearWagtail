@@ -9,6 +9,9 @@
         <div class="date_line">
             <p class="meta blog_date">{{ page.date }}</p>
             <div class="blog_tags">
+                <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.full_url }}" target="_blank">
+                    Share on Facebook
+                </a>
                 {% for tag in page.tags.all %}
                 <a href="" class="btn btn-primary btn-xs">
                     <i class="glyphicon glyphicon-tag"></i> {{ tag }}                  
