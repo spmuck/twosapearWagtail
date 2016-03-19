@@ -6779,6 +6779,7 @@ h4,
 h5,
 .caption {
   max-width: 720px;
+  display: block;
   margin-left: auto;
   margin-right: auto;
 }
@@ -6803,7 +6804,9 @@ p.blog_date {
 }
 .date_line {
   max-width: 720px;
-  margin: 0 auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .date_line:after {
   content: "";
