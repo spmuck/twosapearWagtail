@@ -10,6 +10,11 @@ from wagtail.wagtaildocs.blocks import DocumentChooserBlock
 class ImageFormatChoiceBlock(FieldBlock):
     field = forms.ChoiceField(choices=(
         ('left', 'Wrap left'), ('right', 'Wrap right'), ('mid', 'Mid width'), ('full', 'Full width'),
+    ))
+    
+class ImageSeriesFormatChoiceBlock(FieldBlock):
+    field = forms.ChoiceField(choices=(
+        ('square_md', 'Square Medium Res - 400 x 400'), ('rect_lg', 'Rectangle Medium Res - 600x400'),
     ))                                       
                                                                                
 class ImageBlock(StructBlock):
@@ -18,10 +23,12 @@ class ImageBlock(StructBlock):
     alignment = ImageFormatChoiceBlock()
     
 class TimedImageSeriesBlock(StructBlock):
+    id = CharBlock(label = "ID MUST BE UNIQUE", default="01")
     images = ListBlock(ImageChooserBlock(label="Image", icon="image"))
     width = CharBlock(label = "Image Width")
     height = CharBlock(label = "Image Height")
     interval = CharBlock(label = "Interval in seconds")
+    format = ImageSeriesFormatChoiceBlock(label = "Image Base Format", default="square_md")
 
 class PullQuoteBlock(StructBlock):
     quote = TextBlock("quote title")
