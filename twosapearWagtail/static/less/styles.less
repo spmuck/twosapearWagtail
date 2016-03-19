@@ -1,14 +1,46 @@
 @import "bower_components/bootstrap/less/bootstrap.less";
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300);
 @icon-font-path: "../bower_components/bootstrap/dist/fonts/";
-@navbar-default-link-color: #444;
+@soft-black: #444;
+@navbar-default-link-color: @soft-black;
 @navbar-default-bg: rgba(255, 255, 255, 0.75);
 @font-size-base: 16px;
 @font-family-sans-serif:  "Source Sans Pro", Helvetica, Arial, sans-serif;
 @seafoam-green: #AAB593;
+@twitter: #00aced;
+@instagram: #517fa4;
+@pinterest: #cb2027;
 .main
 {
     margin-top: 20px;
+}
+
+path { transition: fill .4s ease; }
+
+.remove-vertical-padding
+{
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.social-link path
+{
+    fill: @soft-black;
+}
+
+.twitter:hover path
+{
+    fill: @twitter;
+}
+
+.instagram:hover path
+{
+    fill: @instagram;
+}
+
+.pinterest:hover path
+{
+    fill: @pinterest;
 }
 
 .home-post-row
