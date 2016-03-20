@@ -15,7 +15,14 @@
     margin-top: 20px;
 }
 
-path { transition: fill .4s ease; }
+path 
+{ 
+    transition: fill .4s ease; 
+}
+a, .share-btn
+{ 
+    transition: color .4s ease;
+}
 
 .remove-vertical-padding
 {
@@ -85,6 +92,16 @@ p, .intro
     line-height: 1.25em;
     margin-bottom: 1.25em;
     font-weight: 300;
+}
+
+.share-btn
+{
+    font-size: 1.5em;
+    .btn-link;
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
 }
 
 h2

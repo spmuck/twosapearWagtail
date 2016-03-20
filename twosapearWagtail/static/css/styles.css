@@ -6731,6 +6731,10 @@ button.close {
 path {
   transition: fill .4s ease;
 }
+a,
+.share-btn {
+  transition: color .4s ease;
+}
 .remove-vertical-padding {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
@@ -6780,6 +6784,44 @@ p,
   line-height: 1.25em;
   margin-bottom: 1.25em;
   font-weight: 300;
+}
+.share-btn {
+  font-size: 1.5em;
+  color: #337ab7;
+  font-weight: normal;
+  border-radius: 0;
+}
+.share-btn,
+.share-btn:active,
+.share-btn.active,
+.share-btn[disabled],
+fieldset[disabled] .share-btn {
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.share-btn,
+.share-btn:hover,
+.share-btn:focus,
+.share-btn:active {
+  border-color: transparent;
+}
+.share-btn:hover,
+.share-btn:focus {
+  color: #23527c;
+  text-decoration: underline;
+  background-color: transparent;
+}
+.share-btn[disabled]:hover,
+fieldset[disabled] .share-btn:hover,
+.share-btn[disabled]:focus,
+fieldset[disabled] .share-btn:focus {
+  color: #777777;
+  text-decoration: none;
+}
+.share-btn:hover,
+.share-btn:focus {
+  text-decoration: none;
 }
 h2 {
   font-size: 2em;
