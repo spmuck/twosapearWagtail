@@ -1,6 +1,7 @@
 {% extends "home/base.html" %}
 
-{% load wagtailcore_tags wagtailimages_tags %}
+{% load wagtailcore_tags home_tags wagtailimages_tags %}
+{% get_site_root as site_root %}
 
 {% block body_class %}template-blogpage{% endblock %}
 
@@ -16,7 +17,7 @@
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                         <li>
-                            <a href="https://www.facebook.com/sharer/sharer.php?u=http://twosapear.com/celery/}" target="_blank">
+                            <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.full_url }}" target="_blank">
                                 Facebook
                             </a>
                         </li>
@@ -73,6 +74,7 @@
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 {% endblock %}
 {% block social_media_meta %}
-    <meta property="og:url" content="http://i.imgur.com/8uRNEJc.jpg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ page.full_url }}" />
     <meta property="og:image" content="http://i.imgur.com/8uRNEJc.jpg" />
 {% endblock %}
