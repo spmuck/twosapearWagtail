@@ -12,6 +12,8 @@
         <title>{% block title %}{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}{% endblock %}</title>
 
         <meta name="description" content="{% if self.search_description %}{{ self.search_description }}{% endif %}">
+        
+        {% block social_media_meta %}{% endblock %}
 
         {# External stylesheets #}
 

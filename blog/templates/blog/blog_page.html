@@ -16,7 +16,7 @@
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                         <li>
-                            <a href="https://www.facebook.com/sharer/sharer.php?u=twosapear.com{{ page.url }}" target="_blank">
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=http://twosapear.com/celery/}" target="_blank">
                                 Facebook
                             </a>
                         </li>
@@ -26,7 +26,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="http://pinterest.com/pin/create/button/?url=http://twosapear.com{{ page.url }}&media=http://twosapear.com{{ page.main_image.url }}&description=hello" target="_blank">
+                            <a href="http://pinterest.com/pin/create/button/?url=http://twosapear.com{{ page.url }}&media=http://twosapear.com{{ page.main_image.usage_url }}&description=hello" target="_blank">
                                 Printrest
                             </a>
                         </li>
@@ -71,4 +71,8 @@
     })();
     </script>
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+{% endblock %}
+{% block social_media_meta %}
+    <meta property="og:url" content="http://i.imgur.com/8uRNEJc.jpg" />
+    <meta property="og:image" content="http://i.imgur.com/8uRNEJc.jpg" />
 {% endblock %}
