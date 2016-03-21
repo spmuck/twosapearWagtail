@@ -26,7 +26,7 @@ LOGGING = {
         'file': {
             'level': 'ERROR',
             'class': 'logging.FileHandler',
-            'filename': '/home/sean/twosapearWagtail/debug.log',
+            'filename': os.path.join(BASE_DIR, 'debug.log'),
         },
     },
     'django.request': {

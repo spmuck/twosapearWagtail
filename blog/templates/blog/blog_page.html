@@ -1,7 +1,6 @@
 {% extends "home/base.html" %}
 
-{% load wagtailcore_tags home_tags wagtailimages_tags %}
-{% get_site_root as site_root %}
+{% load wagtailcore_tags blog_tags wagtailimages_tags %}
 
 {% block body_class %}template-blogpage{% endblock %}
 
@@ -74,7 +73,5 @@
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 {% endblock %}
 {% block social_media_meta %}
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="{{ page.full_url }}" />
-    <meta property="og:image" content="http://i.imgur.com/8uRNEJc.jpg" />
+    {% social_meta calling_page=page %}
 {% endblock %}
