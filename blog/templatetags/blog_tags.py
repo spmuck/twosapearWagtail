@@ -1,5 +1,6 @@
 from django import template
 from blog.models import BlogPage
+from twosapearWagtail.settings import DOMAIN
 
 register = template.Library()
 
@@ -14,4 +15,11 @@ def social_meta(context, calling_page=None):
         'feed_image' : feed_image,
         # required by the pageurl tag that we want to use within this template
         'request': context['request'],
+    }
+
+@register.inclusion_tag()    
+def get_domain():
+    return
+    {
+        'domain': DOMAIN
     }

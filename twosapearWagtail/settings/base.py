@@ -161,3 +161,5 @@ MEDIA_URL = '/media/'
 # Wagtail settings
 
 WAGTAIL_SITE_NAME = "twosapearWagtail"
+
+DOMAIN = "twosapear.com"

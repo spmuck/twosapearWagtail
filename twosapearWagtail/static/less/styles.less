@@ -10,6 +10,9 @@
 @twitter: #00aced;
 @instagram: #517fa4;
 @pinterest: #cb2027;
+@link-color: @seafoam-green;
+@light-grey: #A0A29F;
+
 .main
 {
     margin-top: 20px;
@@ -39,7 +42,7 @@ svg
 .social-link 
 {
     path{
-        fill: #A0A29F;    
+        fill: @light-grey;    
     }
     margin-left: 10px;
 }
@@ -131,9 +134,17 @@ p, .intro, h1, h2, h3, h4, h5, .caption
 
 h1
 {
-    color: #A2A2A2;
-    font-size: 4em;
-    font-weight: bold;
+    a
+    {
+        font-style: italic;
+        &:hover
+        {
+            text-decoration: none;
+        }
+    }
+    text-transform: uppercase;
+    color: @light-grey;
+    font-size: 2 em;
     margin-bottom: 0;
     text-align: center;
 }
