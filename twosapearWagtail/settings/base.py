@@ -162,4 +162,4 @@ MEDIA_URL = '/media/'
 
 WAGTAIL_SITE_NAME = "twosapearWagtail"
 
-DOMAIN = "twosapear.com"
+DOMAIN = "http://twosapear.com"
