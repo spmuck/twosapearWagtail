@@ -9,29 +9,7 @@
         <div class="date_line">
             <p class="meta blog_date">{{ page.date }}</p>
             <div class="blog_tags">
-                <div class="dropdown">
-                    <button class="btn share-btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                        Share
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li>
-                            <a href="https://www.facebook.com/sharer/sharer.php?u=http://twosapear.com{{ page.url }}" target="_blank">
-                                Facebook
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://twitter.com/intent/tweet?url=http://twosapear.com{{ page.url }}" target="_blank">
-                                Twitter
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://pinterest.com/pin/create/button/?url=twosapear.com{{ page.url }}&media=http://twosapear.com{{ page.main_image.usage_url }}&description=hello" target="_blank">
-                                Printrest
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                {% social_drop_down calling_page=page %}
                 {% for tag in page.tags.all %}
                 <a href="" class="btn btn-primary btn-xs">
                     <i class="glyphicon glyphicon-tag"></i> {{ tag }}                  
@@ -49,28 +27,7 @@
             {% include "blog/streamfield.html" with content=page.body %}
         </div>
     {% endif %}
-    <div id="disqus_thread"></div>
-    <script>
-    /**
-    * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-    * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-    */
-    /*
-    var disqus_config = function () {
-    this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
-    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    */
-    (function() { // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
-
-    s.src = '//twosapear.disqus.com/embed.js';
-
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+    {% include "blog/disqus_thread.html"%}
 {% endblock %}
 {% block social_media_meta %}
     {% social_meta calling_page=page %}

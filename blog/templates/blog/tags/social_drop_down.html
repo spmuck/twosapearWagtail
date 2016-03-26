@@ -1,0 +1,26 @@
+{% load wagtailcore_tags blog_tags wagtailimages_tags %}
+{% image feed_image fill-1200x630 as theimage %}
+{% get_domain as domain %}
+<div class="dropdown">
+    <button class="btn share-btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Share
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u={{domain}}{{ page.url }}" target="_blank">
+                Facebook
+            </a>
+        </li>
+        <li>
+            <a href="https://twitter.com/intent/tweet?url={{domain}}{{ page.url }}&text={{ feed_title|urlencode }}" target="_blank">
+                Twitter
+            </a>
+        </li>
+        <li>
+            <a href="http://pinterest.com/pin/create/link/?url={{domain|urlencode}}{{ page.url|urlencode }}&media={{domain|urlencode}}{{theimage.url|urlencode}}&description={{feed_description|urlencode}}" target="_blank">
+                Pintrest
+            </a>
+        </li>
+    </ul>
+</div>
