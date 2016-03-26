@@ -7,7 +7,7 @@ register = template.Library()
 @register.inclusion_tag('blog/tags/social_meta.html', takes_context=True)
 def social_meta(context, calling_page=None):
     if calling_page.feed_image:
-        feed_image = calling_page.feed_imgage
+        feed_image = calling_page.feed_image
     elif calling_page.main_image:
         feed_image = calling_page.main_image
     return {
