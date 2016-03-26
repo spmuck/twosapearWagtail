@@ -38,8 +38,8 @@ class BlogPage(Page):
         on_delete=models.SET_NULL,
         related_name='+'
     )
-    feed_title = models.CharField(max_length=250)
-    feed_description = models.CharField(max_length=250)
+    feed_title = models.CharField(max_length=250, blank=True, null=True)
+    feed_description = models.CharField(max_length=250, blank=True, null=True)
 
     search_fields = Page.search_fields + (
         index.SearchField('intro'),
