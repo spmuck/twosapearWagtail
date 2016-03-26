@@ -16,7 +16,7 @@
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                         <li>
-                            <a href="https://www.facebook.com/sharer/sharer.php?u={{domain}}{{ page.url }}" target="_blank">
+                            <a href="https://www.facebook.com/sharer/sharer.php?u={% get_domain as domain %}{{ page.url }}" target="_blank">
                                 Facebook
                             </a>
                         </li>
