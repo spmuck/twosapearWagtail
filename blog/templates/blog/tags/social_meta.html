@@ -1,5 +1,6 @@
-{% load wagtailcore_tags wagtailimages_tags %}
+{% load wagtailcore_tags blog_tags wagtailimages_tags %}
 {% image feed_image fill-600x600 as theimage %}
+{% get_domain as domain %}
 <meta property="og:type" content="website" />
-<meta property="og:url" content="{{theimage.url}}" />
-<meta property="og:image" content="twosapear.com/title/" />
+<meta property="og:url" content="{{domain}}{{calling_page.url}}" />
+<meta property="og:image" content="{{domain}}{{theimage.url}}" />

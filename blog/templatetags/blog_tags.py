@@ -1,6 +1,6 @@
 from django import template
 from blog.models import BlogPage
-from twosapearWagtail.settings import DOMAIN
+from django.conf import settings
 
 register = template.Library()
 
@@ -17,9 +17,6 @@ def social_meta(context, calling_page=None):
         'request': context['request'],
     }
 
-@register.inclusion_tag()    
+@register.assignment_tag()    
 def get_domain():
-    return
-    {
-        'domain': DOMAIN
-    }
+    return settings.DOMAIN
