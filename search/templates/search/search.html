@@ -1,4 +1,4 @@
-{% extends "home/base.html" %}
+{% extends "common/base.html" %}
 {% load static wagtailcore_tags wagtailimages_tags %}
 
 {% block body_class %}template-searchresults{% endblock %}
@@ -17,18 +17,7 @@
     </form>
 
     {% if search_results %}
-        <ul>
-            {% for post in search_results %}
-                {% if not forloop.first %}<hr />{% endif %}
-                <div class="row home-post-row">
-                    <div class="col-md-5 col-xs-12"><a href="{% pageurl post %}" class="thumbnail">{% image post.main_image original class="img-rounded" %}</a></div>
-                    <div class="container col-md-7 col-xs-12">
-                        <h1><a href="{% pageurl post %}"><div class="row ">{{ post.title }}</div></a></h1>
-                        <div class="row"><p>{{ post.intro }}</p></div>
-                    </div>
-                </div>
-            {% endfor %}
-        </ul>
+        {% include "common/blog_page_list_view.html" with posts=search_results %}
 
         {% if search_results.has_previous %}
             <a href="{% url 'search' %}?query={{ search_query|urlencode }}&amp;page={{ search_results.previous_page_number }}">Previous</a>
