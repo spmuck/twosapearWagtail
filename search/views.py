@@ -8,6 +8,7 @@ from wagtail.wagtailsearch.models import Query
 def search(request):
     search_query = request.GET.get('query', None)
     page = request.GET.get('page', 1)
+    search_tag = request.GET.get('tag', None)
 
     # Search
     if search_query:
@@ -16,6 +17,8 @@ def search(request):
 
         # Record hit
         query.add_hit()
+    elif search_tag:
+        search_results = Page.objects.live().filter(tags__name__in=[search_tag])
     else:
         search_results = Page.objects.none()
 
@@ -31,4 +34,5 @@ def search(request):
     return render(request, 'search/search.html', {
         'search_query': search_query,
         'search_results': search_results,
+        'search_tag': search_tag,
     })

@@ -2,19 +2,17 @@
 
 {% load wagtailcore_tags blog_tags wagtailimages_tags %}
 {% get_domain as domain %}
+{% block social_media_meta %}
+    {% social_meta calling_page=page %}
+{% endblock %}
 {% block body_class %}template-blogpage{% endblock %}
 
 {% block content %}
     <h1>{{ page.title }}</h1>
         <div class="date_line">
             <p class="meta blog_date">{{ page.date }}</p>
-            <div class="blog_tags">
+            <div class="share_drop_down">
                 {% social_drop_down calling_page=page %}
-                {% for tag in page.tags.all %}
-                <a href="" class="btn btn-primary btn-xs">
-                    <i class="glyphicon glyphicon-tag"></i> {{ tag }}                  
-                </a>
-                {% endfor%}
             </div>
         </div>   
     <hr>
@@ -27,8 +25,9 @@
             {% include "blog/streamfield.html" with content=page.body %}
         </div>
     {% endif %}
+    <hr>
+    <div class="blog_tags">
+        {% include "blog/blog_tags.html" with tags=page.tags.all %}
+    </div>
     {% include "blog/disqus_thread.html"%}
-{% endblock %}
-{% block social_media_meta %}
-    {% social_meta calling_page=page %}
 {% endblock %}
