@@ -1,0 +1,52 @@
+@twitter: #00aced;
+@instagram: #517fa4;
+@pinterest: #cb2027;
+
+path 
+{ 
+    transition: fill .4s ease; 
+}
+
+svg
+{
+    height: 32px;
+    width: 32px;
+}
+
+.social-link 
+{
+    path{
+        fill: @light-grey;    
+    }
+    margin-left: 10px;
+}
+
+.twitter:hover path
+{
+    fill: @twitter;
+}
+
+.instagram:hover path
+{
+    fill: @instagram;
+}
+
+.pinterest:hover path
+{
+    fill: @pinterest;
+}
+
+.share-btn
+{
+    font-size: 1.5em;
+    .btn-link;
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+}
+
+.share_drop_down
+{
+    float: right;
+}

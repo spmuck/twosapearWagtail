@@ -6725,19 +6725,12 @@ button.close {
     display: none !important;
   }
 }
-.main {
-  margin-top: 20px;
-}
-path {
-  transition: fill .4s ease;
-}
 a,
 .share-btn {
   transition: color .4s ease;
 }
-.remove-vertical-padding {
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
+path {
+  transition: fill .4s ease;
 }
 svg {
   height: 32px;
@@ -6757,40 +6750,6 @@ svg {
 }
 .pinterest:hover path {
   fill: #cb2027;
-}
-.home-post-row {
-  padding: 5px;
-}
-.stream-image {
-  width: 100%;
-  padding: 0px;
-}
-.caption_placeholder {
-  background-color: #000;
-  bottom: 0;
-  color: #fff;
-  left: 0;
-  opacity: 0.5;
-  position: absolute;
-  width: 100%;
-}
-.logo {
-  margin-top: 50px;
-}
-hr {
-  border: 0;
-  height: 1px;
-  width: 50%;
-  background: #333;
-  background-image: linear-gradient(to right, #ccc, #333, #ccc);
-}
-p,
-.intro {
-  font-size: 1.5em;
-  color: #444;
-  line-height: 1.25em;
-  margin-bottom: 1.25em;
-  font-weight: 300;
 }
 .share-btn {
   font-size: 1.5em;
@@ -6830,6 +6789,17 @@ fieldset[disabled] .share-btn:focus {
 .share-btn:focus {
   text-decoration: none;
 }
+.share_drop_down {
+  float: right;
+}
+p,
+.intro {
+  font-size: 1.5em;
+  color: #444;
+  line-height: 1.25em;
+  margin-bottom: 1.25em;
+  font-weight: 300;
+}
 h2 {
   font-size: 2em;
   line-height: 1.1em;
@@ -6866,13 +6836,17 @@ h1 a:hover {
   text-align: center;
   font-style: italic;
 }
+hr {
+  border: 0;
+  height: 1px;
+  width: 50%;
+  background: #333;
+  background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
 p.blog_date {
   font-weight: 100;
   font-size: 1em;
   float: left;
-}
-.intro {
-  margin-top: 1em;
 }
 .date_line {
   max-width: 720px;
@@ -6885,6 +6859,32 @@ p.blog_date {
   display: block;
   clear: both;
 }
-.share_drop_down {
-  float: right;
+.intro {
+  margin-top: 1em;
+}
+.main {
+  margin-top: 20px;
+}
+.remove-vertical-padding {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+.home-post-row {
+  padding: 5px;
+}
+.stream-image {
+  width: 100%;
+  padding: 0px;
+}
+.caption_placeholder {
+  background-color: #000;
+  bottom: 0;
+  color: #fff;
+  left: 0;
+  opacity: 0.5;
+  position: absolute;
+  width: 100%;
+}
+.logo {
+  margin-top: 50px;
 }
