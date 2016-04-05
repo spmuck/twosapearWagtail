@@ -2,7 +2,7 @@
 
 <div class="timed-image-series">
     <img id="img-series-{{self.id}}" width="{{ self.width }}" height="{{ self.height }}" 
-        class="img-responsive img-rounded center-block {% if child.value.alignment == "left" %}pull-left{% endif %}"/>
+        class="img-responsive img-rounded center-block {% if self.alignment == "left" %}pull-left{% endif %}"/>
     <script type = "text/javascript">
         var images = [];
         {% for image in self.images %}

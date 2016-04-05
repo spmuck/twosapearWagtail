@@ -6862,6 +6862,9 @@ p.blog_date {
 .intro {
   margin-top: 1em;
 }
+.timed-image-series img.pull-left {
+  margin-right: 32px;
+}
 .main {
   margin-top: 20px;
 }
