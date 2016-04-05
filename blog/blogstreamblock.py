@@ -24,11 +24,12 @@ class ImageBlock(StructBlock):
     
 class TimedImageSeriesBlock(StructBlock):
     id = CharBlock(label = "ID MUST BE UNIQUE", default="01")
-    images = ListBlock(ImageBlock(label="Image", icon="image"))
+    images = ListBlock(ImageChooserBlock(label="Image", icon="image"))
     width = CharBlock(label = "Image Width")
     height = CharBlock(label = "Image Height")
     interval = CharBlock(label = "Interval in seconds")
     format = ImageSeriesFormatChoiceBlock(label = "Image Base Format", default="square_md")
+    alignment = ImageFormatChoiceBlock()
 
 class PullQuoteBlock(StructBlock):
     quote = TextBlock("quote title")
