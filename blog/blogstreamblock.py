@@ -24,7 +24,7 @@ class ImageBlock(StructBlock):
     
 class TimedImageSeriesBlock(StructBlock):
     id = CharBlock(label = "ID MUST BE UNIQUE", default="01")
-    images = ListBlock(ImageChooserBlock(label="Image", icon="image"))
+    images = ListBlock(ImageBlock(label="Image", icon="image"))
     width = CharBlock(label = "Image Width")
     height = CharBlock(label = "Image Height")
     interval = CharBlock(label = "Interval in seconds")

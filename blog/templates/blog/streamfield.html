@@ -32,7 +32,8 @@
                     {% image child.value.image width-1280 as theimage %}
                 {% endif %}
                 <div class="stream-image">
-                    <img src="{{ theimage.url }}" width="{{ theimage.width }}" height="{{ theimage.height }}" alt="{{ theimage.alt }}" class="img-responsive img-rounded" />
+                    <img src="{{ theimage.url }}" width="{{ theimage.width }}" height="{{ theimage.height }}" alt="{{ theimage.title }}" 
+                        class="img-responsive img-rounded {% if child.value.alignment == "left" %}pull-left{% endif %} " />
 
                     {% if child.value.caption %}
                         <div class="caption">
