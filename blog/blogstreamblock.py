@@ -5,32 +5,14 @@ from wagtail.wagtailcore.blocks import (TextBlock, StructBlock, StreamBlock,
                                         RawHTMLBlock, ListBlock)
 from wagtail.wagtailimages.blocks import ImageChooserBlock
 from wagtail.wagtaildocs.blocks import DocumentChooserBlock
-
-
-class ImageFormatChoiceBlock(FieldBlock):
-    field = forms.ChoiceField(choices=(
-        ('left', 'Wrap left'), ('right', 'Wrap right'), ('mid', 'Mid width'), ('full', 'Full width'),
-    ))
-    
-class ImageSeriesFormatChoiceBlock(FieldBlock):
-    field = forms.ChoiceField(choices=(
-        ('square_md', 'Square Medium Res - 400 x 400'), ('rect_lg', 'Rectangle Medium Res - 600x400'),
-    ))                                       
-                                                                               
+from twosapearWagtail.blocks import TimedImageSeriesBlock, ImageAlignmentChoiceBlock
+                                                                                                                    
 class ImageBlock(StructBlock):
     image = ImageChooserBlock()
     caption = RichTextBlock()
-    alignment = ImageFormatChoiceBlock()
+    alignment = ImageAlignmentChoiceBlock()
     
-class TimedImageSeriesBlock(StructBlock):
-    id = CharBlock(label = "ID MUST BE UNIQUE", default="01")
-    images = ListBlock(ImageChooserBlock(label="Image", icon="image"))
-    width = CharBlock(label = "Image Width")
-    height = CharBlock(label = "Image Height")
-    interval = CharBlock(label = "Interval in seconds")
-    format = ImageSeriesFormatChoiceBlock(label = "Image Base Format", default="square_md")
-    alignment = ImageFormatChoiceBlock()
-
+    
 class PullQuoteBlock(StructBlock):
     quote = TextBlock("quote title")
     attribution = CharBlock()
