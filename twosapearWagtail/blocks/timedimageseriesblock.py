@@ -1,6 +1,4 @@
-from wagtail.wagtailcore.blocks import (TextBlock, StructBlock, StreamBlock,
-                                        FieldBlock, CharBlock, RichTextBlock, 
-                                        RawHTMLBlock, ListBlock)
+from wagtail.wagtailcore.blocks import StructBlock, CharBlock, ListBlock
 from wagtail.wagtailimages.blocks import ImageChooserBlock
 from .imagealignmentchoiceblock import ImageAlignmentChoiceBlock
 from .imageformatchoiceblock import ImageFormatChoiceBlock

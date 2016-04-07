@@ -2,7 +2,7 @@ from django import forms
 
 from wagtail.wagtailcore.blocks import (TextBlock, StructBlock, StreamBlock,
                                         FieldBlock, CharBlock, RichTextBlock, 
-                                        RawHTMLBlock, ListBlock)
+                                        RawHTMLBlock)
 from wagtail.wagtailimages.blocks import ImageChooserBlock
 from wagtail.wagtaildocs.blocks import DocumentChooserBlock
 from twosapearWagtail.blocks import TimedImageSeriesBlock, ImageAlignmentChoiceBlock
