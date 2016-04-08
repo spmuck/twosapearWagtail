@@ -6865,6 +6865,9 @@ p.blog_date {
 .timed-image-series img.pull-left {
   margin-right: 32px;
 }
+.about_content h2 {
+  color: #A0A29F;
+}
 .remove-vertical-padding {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
