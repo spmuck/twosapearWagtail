@@ -1,0 +1,12 @@
+{% load wagtailcore_tags static wagtailimages_tags %}
+<script src="{% static "js/imageSeries.js" %}"></script>
+
+<div class="about_content row center-block">
+    {% for child in content %}
+        {% if child.block_type == 'timed_image_series' %}
+            <div class="col-md-offset-1 col-md-5 col-xs-12">{{ child }}</div>
+        {% elif child.block_type == 'paragraph' %}
+            <div class="paragraph col-md-6 col-xs-12">{{ child.value|richtext }}</div>
+        {% endif %}
+    {% endfor %}
+</div>

@@ -6865,9 +6865,6 @@ p.blog_date {
 .timed-image-series img.pull-left {
   margin-right: 32px;
 }
-.main {
-  margin-top: 20px;
-}
 .remove-vertical-padding {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
@@ -6890,4 +6887,5 @@ p.blog_date {
 }
 .logo {
   margin-top: 50px;
+  margin-bottom: 50px;
 }
