@@ -6793,7 +6793,9 @@ fieldset[disabled] .share-btn:focus {
   float: right;
 }
 p,
-.intro {
+.intro,
+ol,
+ul {
   font-size: 1.5em;
   color: #444;
   line-height: 1.25em;
@@ -6815,6 +6817,8 @@ h2,
 h3,
 h4,
 h5,
+ol,
+ul,
 .caption,
 .blog_tags {
   max-width: 720px;
