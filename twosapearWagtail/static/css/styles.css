@@ -6896,3 +6896,13 @@ p.blog_date {
   margin-top: 50px;
   margin-bottom: 50px;
 }
+.recipe_thumbnail {
+  position: relative;
+}
+.recipe_thumbnail p {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  margin: 0 auto;
+}

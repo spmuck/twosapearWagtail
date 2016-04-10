@@ -1,12 +1,12 @@
 {% load wagtailcore_tags wagtailimages_tags %}
 
+<div class="row home-post-row center-block">
 {% for post in posts %}
-    {% if not forloop.first %}<hr />{% endif %}
-    <div class="row home-post-row">
-        <div class="col-md-5 col-xs-12"><a href="{% pageurl post %}" class="thumbnail">{% image post.main_image original class="img-rounded" %}</a></div>
-        <div class="container col-md-7 col-xs-12">
-            <h1><a href="{% pageurl post %}"><div class="row ">{{ post.title }}</div></a></h1>
-            <div class="row"><p>{{ post.intro }}</p></div>
-        </div>
-    </div>
+        <div class="col-xs-6 col-sm-4 col-md-3 recipe_thumbnail">
+            <a href="{% pageurl post %}" class="thumbnail">
+                {% image post.main_image fill-400x400 class="img-rounded" %}
+            </a>
+            <p>adfadf</p>
+         </div>    
 {% endfor %}
+</div>
