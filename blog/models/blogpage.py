@@ -40,6 +40,7 @@ class BlogPage(Page):
     )
     feed_title = models.CharField(max_length=250, blank=True, null=True)
     feed_description = models.CharField(max_length=250, blank=True, null=True)
+    is_recipe = models.BooleanField()
 
     search_fields = Page.search_fields + (
         index.SearchField('intro'),
@@ -52,6 +53,7 @@ class BlogPage(Page):
         FieldPanel('intro'),
         StreamFieldPanel('body'),
         InlinePanel('carousel_items', label="Carousel items"),
+        FieldPanel('is_recipe'),
     ]
     
     promote_panels = Page.promote_panels + [
