@@ -1,0 +1,9 @@
+{% extends "common/base.html" %}
+
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block body_class %}template-recipes{% endblock %}
+
+{% block content %}
+    {% include "common/blog_page_list_view.html" with posts=posts %}
+{% endblock %}
