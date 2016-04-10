@@ -6751,6 +6751,9 @@ svg {
 .pinterest:hover path {
   fill: #cb2027;
 }
+.youtube:hover path {
+  fill: #cd201f;
+}
 .share-btn {
   font-size: 1.5em;
   color: #609732;
