@@ -44,6 +44,8 @@
             </div>
         {% elif child.block_type == 'timed_image_series' %}
             {{ child }}
+        {% elif child.block_type == 'video_embed' %}
+            {{ child }}
         {% else %}
             {{ child }}
         {% endif %}

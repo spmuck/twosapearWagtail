@@ -6,6 +6,9 @@ from wagtail.wagtailcore.blocks import (TextBlock, StructBlock, StreamBlock,
 from wagtail.wagtailimages.blocks import ImageChooserBlock
 from wagtail.wagtaildocs.blocks import DocumentChooserBlock
 from twosapearWagtail.blocks import TimedImageSeriesBlock, ImageAlignmentChoiceBlock
+from wagtail.wagtailsnippets.blocks import SnippetChooserBlock
+from blog.video import Video
+
                                                                                                                     
 class ImageBlock(StructBlock):
     image = ImageChooserBlock()
@@ -32,8 +35,11 @@ class AlignedHTMLBlock(StructBlock):
     alignment = HTMLAlignmentChoiceBlock()
 
     class Meta:
-        icon = "code"   
-
+        icon = "code"
+        
+class VideoEmbedBlock(StructBlock):
+    max_width = CharBlock()
+    video = SnippetChooserBlock(Video)
 
 class BlogStreamBlock(StreamBlock):
     h2 = CharBlock(icon="title", classname="title")
@@ -46,4 +52,5 @@ class BlogStreamBlock(StreamBlock):
     aligned_html = AlignedHTMLBlock(icon="code", label='Raw HTML')
     document = DocumentChooserBlock(icon="doc-full-inverse")
     timed_image_series = TimedImageSeriesBlock(label="Timed images for my babyo :)", icon="image", template="blog/timedimageseries.html")
+    video_embed = VideoEmbedBlock(template="blog/video_embed.html")
     
