@@ -13,10 +13,10 @@
 {% if posts.paginator.num_pages > 1 %}
     <nav>
     <ul class="pagination">    
-        {% if posts.has_next %}
+        {% if posts.has_previous %}
         <li>
-            <a href="?page={{ posts.next_page_number }}" aria-label="Next">
-                <span aria-hidden="true">&laquo; Older</span>
+            <a href="?page={{ posts.previous_page_number  }}" aria-label="Previous">
+                <span aria-hidden="true">&laquo; Newer</span>
             </a>
         </li>
         {% endif %}
@@ -25,10 +25,10 @@
                 Page {{ posts.number }} of {{ posts.paginator.num_pages }}
             </span>
         </li>
-        {% if posts.has_previous %}
+        {% if posts.has_next %}
         <li>
-            <a href="?page={{ posts.previous_page_number  }}" aria-label="Previous">
-                <span aria-hidden="true">&raquo; Newer</span>
+            <a href="?page={{ posts.next_page_number }}" aria-label="Next">
+                <span aria-hidden="true">&raquo; Older</span>
             </a>
         </li>
         {% endif %}
