@@ -3,10 +3,13 @@
 <div class="row home-post-row center-block">
 {% for post in posts %}
     <a href="{% pageurl post %}">
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 recipe_thumbnail">
             <div class="hovereffect">
-                {% image post.main_image fill-400x400  class="img-responsive" alt=post.main_image.title %}
+                {% image post.main_image fill-400x400  class="img-responsive center-block" alt=post.main_image.title %}
                 <div class="overlay">
+                    <h3>{{post.title}}<h3>
+                </div>
+                <div class="visible-xs subtitle">
                     <h3>{{post.title}}<h3>
                 </div>
             </div>

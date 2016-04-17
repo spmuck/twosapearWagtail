@@ -6896,6 +6896,9 @@ p.blog_date {
 .about_content h2 {
   color: #A0A29F;
 }
+.recipe_thumbnail {
+  margin-bottom: 30px;
+}
 .hovereffect {
   width: 100%;
   height: 100%;
@@ -6904,7 +6907,9 @@ p.blog_date {
   position: relative;
   text-align: center;
   cursor: default;
-  background: #42b078;
+}
+.hovereffect:hover {
+  cursor: pointer;
 }
 .hovereffect .overlay {
   width: 100%;
@@ -6919,6 +6924,17 @@ p.blog_date {
   background-color: rgba(0, 0, 0, 0.5);
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
+}
+.hovereffect .subtitle {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  padding: 50px 20px;
+  color: white !important;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 .hovereffect img {
   display: block;
