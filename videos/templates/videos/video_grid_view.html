@@ -1,0 +1,32 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+<div class="row home-post-row center-block">
+{% for video in videos %}
+    <a href="#" data-toggle="modal" data-target="#videoModal" data-theVideo="{{video.embed_url}}" >
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 recipe_thumbnail">
+            <div class="hovereffect">
+                {% image video.image fill-400x400  class="img-responsive center-block" alt=video.image.title %}
+                <div class="overlay">
+                    <h3>{{video.title}}<h3>
+                </div>
+                <div class="visible-xs subtitle">
+                    <h3>{{video.title}}<h3>
+                </div>
+            </div>
+        </div>
+    </a>
+{% endfor %}
+</div>
+
+<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <div>
+          <iframe width="100%" height="350" src=""></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

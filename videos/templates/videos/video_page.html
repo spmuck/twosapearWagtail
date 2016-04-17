@@ -1,0 +1,13 @@
+{% extends "common/base.html" %}
+
+{% load wagtailcore_tags static wagtailimages_tags %}
+
+{% block body_class %}template-recipes{% endblock %}
+
+{% block content %}
+    {% include "videos/video_grid_view.html" with videos=videos %}
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static "js/videoModal.js" %}"></script>
+{% endblock %}
