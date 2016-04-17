@@ -2,14 +2,16 @@
 
 <div class="row home-post-row center-block">
 {% for post in posts %}
-    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-        <div class="hovereffect">
-            {% image post.main_image fill-400x400  class="img-responsive" alt=post.main_image.title %}
-            <div class="overlay">
-                <h2>{{post.title}}</h2>
-                <a class="info" href="{% pageurl post %}">Cook!</a>
+    <a href="{% pageurl post %}">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <div class="hovereffect">
+                {% image post.main_image fill-400x400  class="img-responsive" alt=post.main_image.title %}
+                <div class="overlay">
+                    <h3>{{post.title}}<h3>
+                </div>
             </div>
-        </div>
-    </div>    
+        </div>  
+    </a>  
 {% endfor %}
 </div>
+
