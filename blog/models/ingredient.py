@@ -6,10 +6,14 @@ from wagtail.wagtailsnippets.models import register_snippet
 
 @register_snippet
 class Ingredient(models.Model):
+    DEFAULT_SERVINGS_FORMAT_CHOICES = (
+        ('quantity', 'Quantity'),
+        ('volume', 'Volume'),
+        ('weight', 'Weight'),
+    )   
     name = models.CharField(max_length=100, unique=True)
-    default_serving_format = forms.ChoiceField(choices=(
-        ('quantity', 'Quantity'), ('volume', 'Volume'), ('weight','Weight')),
-        initial='Weight')
+    default_serving_format = models.CharField(choices=DEFAULT_SERVINGS_FORMAT_CHOICES,
+        default='weight', max_length=10)
     serving_size_quantity = models.DecimalField(max_digits=10, decimal_places=1, blank=True)
     serving_size_volume = models.DecimalField(max_digits=10, decimal_places=1, blank=True)
     serving_size_weight = models.DecimalField(max_digits=10, decimal_places=1, blank=True)
