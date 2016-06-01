@@ -6798,6 +6798,20 @@ fieldset[disabled] .share-btn:focus {
 .share_drop_down {
   float: right;
 }
+@media (max-device-width: 768px) {
+  body p,
+  body .intro,
+  body ol,
+  body ul {
+    font-size: 1.2em;
+  }
+  body h2 {
+    font-size: 1.5em;
+  }
+  body h1 {
+    font-size: 2em;
+  }
+}
 p,
 .intro,
 ol,
